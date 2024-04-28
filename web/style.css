@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#notifications-container {
+	position: absolute;
+	top: 80px;
+	right: 0;
+	width: auto;
+	height: auto;
+	max-height: 50vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.notification {
+    display: none;
+    font-size: 17px;
+    font-family: sans-serif;
+    margin-top: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 12px;
+    max-width: 500px;
+    align-items: center;
+}
+
+.icon {
+    font-size: 20px;
+    height: 100%;
+}
+
+.message {
+    padding-left: 10px;
+}
+
+@keyframes slide-anim-in {
+    0% {
+      transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+      transform-origin: 0% 50%;
+      filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) scaleY(1) scaleX(1);
+      transform-origin: 50% 50%;
+      filter: blur(0);
+      opacity: 1;
+    }
+}
+
+.slide-anim-in {
+	animation: slide-anim-in 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@keyframes slide-anim-out {
+    0% {
+      transform: translateX(0) scaleY(1) scaleX(1);
+      transform-origin: 50% 50%;
+      filter: blur(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+      transform-origin: 0% 50%;
+      filter: blur(40px);
+      opacity: 0;
+    }
+}
+  
+.slide-anim-out {
+    animation: slide-anim-out 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
